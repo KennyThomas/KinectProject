@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<grammar xml:lang="en" root="Menu"
+tag-format="semantics/1.0" version="1.0"
+xmlns="http://www.w3.org/2001/06/grammar">
+
+  <rule id="Menu">
+    <one-of>
+      <item>
+        <ruleref uri="#start"/>
+      </item>
+       <item>
+        <ruleref uri="#pause"/>
+      </item>
+      <item>
+        <ruleref uri="#restart"/>
+      </item>
+      <item>
+        <ruleref uri="#resume"/>
+      </item>
+      <item>
+        <ruleref uri="#quit"/>
+      </item>
+       <item>
+        <ruleref uri="#soundon"/>
+      </item>
+       <item>
+        <ruleref uri="#soundof"/>
+      </item>
+       <item>
+        <ruleref uri="#exitGame"/>
+      </item>
+      <item>
+        <ruleref uri="#tutorial"/>
+      </item>
+
+      <item>
+        <ruleref uri="#level1"/>
+      </item>
+
+      <item>
+        <ruleref uri="#level2"/>
+      </item>
+
+      <item>
+        <ruleref uri="#levelselect"/>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="start">
+    <item>start the game</item>
+  </rule>
+
+  <rule id="pause">
+    <item>pause the game</item>
+  </rule>
+
+  <rule id="resume">
+    <item>resume the game</item>
+  </rule>
+  <rule id="restart">
+    <item>restart the game</item>
+  </rule>
+
+  <rule id="quit">
+    <item>quit the game</item>
+  </rule>
+
+  <rule id="exitGame">
+    <item>exit the game</item>
+  </rule>
+
+  <rule id="tutorial">
+    <item>go to tutorial</item>
+  </rule>
+
+  <rule id="soundof">
+    <item>turn sound off</item>
+  </rule>
+
+  <rule id="soundon">
+    <item>turn sound on</item>
+  </rule>
+
+   <rule id="level1">
+    <item>go to level one</item>
+  </rule>
+
+   <rule id="level2">
+  <item>go to level two</item>
+  </rule>
+
+  <rule id="levelselect">
+  <item>go to level select</item>
+  </rule>
+</grammar>
