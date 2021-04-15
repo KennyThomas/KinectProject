@@ -42,7 +42,11 @@ public class UIController : MonoBehaviour
     }
     void Update()
     {
-
+        if(SceneManager.GetActiveScene().buildIndex == 5){
+            Time.timeScale =1f;
+            Debug.Log("in the tutorial");
+        }
+            
         if(move == true){
                 player.transform.position += transform.forward * Time.deltaTime * speed;
                 
@@ -98,6 +102,7 @@ public class UIController : MonoBehaviour
 
     
     public void Pause(){
+        
         pauseMenuUI.SetActive(true);
         Time.timeScale =0f;
         GameIsPaused = true;
@@ -135,6 +140,7 @@ public class UIController : MonoBehaviour
 
     public void Restart(){
         int scene = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log(scene);
         SceneManager.LoadScene(scene);
         Time.timeScale =1f;
     }
