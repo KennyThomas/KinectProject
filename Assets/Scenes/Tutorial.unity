@@ -947,9 +947,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf50bc9a2847ac478b8259ca3f88ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndLevelUI: {fileID: 0}
+  EndLevelUI: {fileID: 537257944}
   Hearts: 10
   Score: 0
+  uic: {fileID: 28051539}
 --- !u!4 &415621475
 Transform:
   m_ObjectHideFlags: 0

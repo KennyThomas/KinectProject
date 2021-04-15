@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public GameObject EndLevelUI;
     public  int  Hearts = 10;
     public  int  Score = 0;
+    public UIController uic;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,8 @@ public class Player : MonoBehaviour
 
         if(Hearts <=0){
         EndLevelUI.SetActive(true);
-        Time.timeScale =0f;
+        Debug.Log("STOP THE GAME");
+        uic.Stopgame();
         }
     }
 }

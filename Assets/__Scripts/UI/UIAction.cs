@@ -12,6 +12,9 @@ public class UIAction : MonoBehaviour
   public static int heartDisplay;      
   public TextMeshProUGUI hearts;
 
+  public TextMeshProUGUI timer;
+  public static float timerDisplay;
+
    
 
 
@@ -20,6 +23,7 @@ public class UIAction : MonoBehaviour
     {
       score.text = "Score: "+scoreDisplay.ToString();
       hearts.text = "Hearts: "+heartDisplay.ToString();
+      timer.text = "Time: "+timerDisplay.ToString("F0");
 
     }
 }

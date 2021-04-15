@@ -48,6 +48,7 @@ public class UIController : MonoBehaviour
         }
             
         if(move == true){
+                UIAction.timerDisplay += Time.deltaTime;
                 player.transform.position += transform.forward * Time.deltaTime * speed;
                 
             }
@@ -78,15 +79,6 @@ public class UIController : MonoBehaviour
             default:
                 break;
         }
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            if (GameIsPaused)
-            {
-                Resume();
-            }
-            else{
-                Pause();
-            }
-        }
     }
 
     public void Resume(){
@@ -104,7 +96,7 @@ public class UIController : MonoBehaviour
     public void Pause(){
         
         pauseMenuUI.SetActive(true);
-        Time.timeScale =0f;
+        Stopgame();
         GameIsPaused = true;
 
     }
@@ -112,14 +104,14 @@ public class UIController : MonoBehaviour
 
     public void Options(){
         pauseMenuUI.SetActive(false);
-        Time.timeScale =0f;
+        Stopgame();
         GameIsPaused = true;
     
     }
 
     public void Return(){
         pauseMenuUI.SetActive(true);
-        Time.timeScale =0f;
+        Stopgame();
         GameIsPaused = true;
       
 
@@ -135,6 +127,10 @@ public class UIController : MonoBehaviour
     public void LoadMenu(){
         SceneManager.LoadScene("Menu");
         Time.timeScale =1f;      
+    }
+
+    public void Stopgame(){
+        Time.timeScale =0f;      
     }
 
 
