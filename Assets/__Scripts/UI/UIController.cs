@@ -13,10 +13,13 @@ public class UIController : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject player;
     public  float speed = 10f;
+    public float timeAlive = 0;
     bool move = false;
     
     private void Start()
     { 
+        timeAlive = 0f;
+        UIAction.timerDisplay = timeAlive;
 
         Time.timeScale =0f;
         gr = new GrammarRecognizer(Path.Combine(Application.streamingAssetsPath, 
@@ -48,7 +51,8 @@ public class UIController : MonoBehaviour
         }
             
         if(move == true){
-                UIAction.timerDisplay += Time.deltaTime;
+                timeAlive += Time.deltaTime;
+                UIAction.timerDisplay = timeAlive;
                 player.transform.position += transform.forward * Time.deltaTime * speed;
                 
             }

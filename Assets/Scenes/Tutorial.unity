@@ -284,6 +284,7 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 1262838158}
   player: {fileID: 415621473}
   speed: 10
+  timeAlive: 0
 --- !u!1 &63083233
 GameObject:
   m_ObjectHideFlags: 0
