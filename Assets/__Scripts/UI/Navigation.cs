@@ -10,16 +10,12 @@ public class Navigation : MonoBehaviour
 
 
      [SerializeField] private string valueString;
-
-
    private GrammarRecognizer gr;
 
-
-    // Action is in System, using System; or System.Action
    private void Start()
     {
        
-        gr = new GrammarRecognizer(Path.Combine(Application.streamingAssetsPath, 
+        gr = new GrammarRecognizer(Path.Combine(Application.streamingAssetsPath, //load in Grammar
                                                 "MenuGrammar.xml"), 
                                     ConfidenceLevel.Low);
         Debug.Log("Grammar loaded!");
@@ -33,12 +29,7 @@ public class Navigation : MonoBehaviour
     {
         StringBuilder  message = new StringBuilder();
         Debug.Log("Recognised a phrase");
-        // read the semantic meanings from the args passed in.
         SemanticMeaning[] meanings = args.semanticMeanings;
-        // Move pawn from C2 to C4 - Piece, Start, Finish
-        // semantic meanings are returned as key/value pairs
-        // Piece/"pawn", Start/"C2", Finish/"C4"
-        // use foreach to get all the meanings.
         foreach(SemanticMeaning meaning in meanings)
         {
             string  keyString = meaning.key.Trim();
@@ -53,9 +44,9 @@ public class Navigation : MonoBehaviour
 
      void Update()
     {
-        // how to apply that command from the spoken word
+        // depending on the command it will trigger a method
 
-        switch (valueString)
+        switch (valueString)  
         {
             case "go to level select":
                 LevelSelect();
@@ -67,12 +58,17 @@ public class Navigation : MonoBehaviour
                 Tutorial();
                 break;
             case "turn sound off":
-                //Mute();
+                Mute();
                 break;
            case "turn sound on":
-                //SoundOn();
+                SoundOn();
                 break;
-
+            case "go to instructions":
+                instructions();
+                break;
+            case "go back":
+                Back();
+                break;
             case "go to level one":
                 Level1();
                 break;
@@ -122,5 +118,13 @@ public class Navigation : MonoBehaviour
 
         Application.Quit();
 
+    }
+
+     public void Mute(){    
+        AudioListener.volume = 0f;
+    }
+
+    public void SoundOn(){    
+        AudioListener.volume = 1f;
     }
 }

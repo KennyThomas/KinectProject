@@ -315,10 +315,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 63083233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1ec0e56add54b540a08886d884dbf5e, type: 3}
+  m_Script: {fileID: 11500000, guid: 68e6e7e9e5a181643aef39768d93ad0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 415621474}
+  playerSpeed: {fileID: 28051539}
 --- !u!54 &63083235
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -572,9 +573,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e6e7e9e5a181643aef39768d93ad0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnManager: {fileID: 0}
   player: {fileID: 415621474}
-  playerSpeed: {fileID: 0}
+  playerSpeed: {fileID: 28051539}
 --- !u!54 &233735372
 Rigidbody:
   m_ObjectHideFlags: 0

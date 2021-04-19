@@ -45,6 +45,12 @@ xmlns="http://www.w3.org/2001/06/grammar">
       <item>
         <ruleref uri="#levelselect"/>
       </item>
+      <item>
+        <ruleref uri="#instructions"/>
+      </item>
+      <item>
+        <ruleref uri="#goback"/>
+      </item>
     </one-of>
   </rule>
 
@@ -93,5 +99,13 @@ xmlns="http://www.w3.org/2001/06/grammar">
 
   <rule id="levelselect">
   <item>go to level select</item>
+  </rule>
+
+  <rule id="instructions">
+  <item>go to instructions</item>
+  </rule>
+
+  <rule id="goback">
+  <item>go back</item>
   </rule>
 </grammar>

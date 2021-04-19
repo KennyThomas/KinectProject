@@ -5,7 +5,6 @@ using UnityEngine;
 public class CollisionController : MonoBehaviour
 {
 
-  public SpawnManager spawnManager;
   public Player player;
   public UIController playerSpeed;
     
@@ -15,21 +14,21 @@ public class CollisionController : MonoBehaviour
          {
            
 
-             if(collision.gameObject.tag=="Barrier")
+             if(collision.gameObject.tag=="Barrier")    // If the player collides with the barrier reduce hearts
              {
                Debug.Log("hit");
                Destroy(collision.gameObject); 
-               player.Hearts -=1;
+               player.Hearts -=1;           
           
                
              }
 
-              if(collision.gameObject.tag=="Check")
+              if(collision.gameObject.tag=="Check")  // If the player goes past the barrier increase speed
              {  Destroy(collision.gameObject); 
-                playerSpeed.speed +=5f;
+                playerSpeed.speed +=2.5f;
              } 
 
-             if(collision.gameObject.tag=="passed")
+             if(collision.gameObject.tag=="passed")  // If the player goes past the barrier increase scoresss
              {
               Destroy(collision.gameObject); 
               player.Score += 10;

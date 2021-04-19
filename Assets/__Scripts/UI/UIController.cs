@@ -22,7 +22,7 @@ public class UIController : MonoBehaviour
         UIAction.timerDisplay = timeAlive;
 
         Time.timeScale =0f;
-        gr = new GrammarRecognizer(Path.Combine(Application.streamingAssetsPath, 
+        gr = new GrammarRecognizer(Path.Combine(Application.streamingAssetsPath, //load in grammar
         "MenuGrammar.xml"), ConfidenceLevel.Low);
         Debug.Log("Grammar loaded!");
         gr.OnPhraseRecognized += GR_OnPhraseRecognized;
@@ -45,13 +45,13 @@ public class UIController : MonoBehaviour
     }
     void Update()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 5){
+        if(SceneManager.GetActiveScene().buildIndex == 5){  // if the player is in the tutorial don't freeze the game on start
             Time.timeScale =1f;
             Debug.Log("in the tutorial");
         }
             
         if(move == true){
-                timeAlive += Time.deltaTime;
+                timeAlive += Time.deltaTime; //once the player says "Start the game" the player moves and the timer starts
                 UIAction.timerDisplay = timeAlive;
                 player.transform.position += transform.forward * Time.deltaTime * speed;
                 

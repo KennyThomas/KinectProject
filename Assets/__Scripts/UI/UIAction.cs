@@ -20,7 +20,7 @@ public class UIAction : MonoBehaviour
    
 
 
-    // Update is called once per frame
+    // UIAction is used to display the the values on screen
     void Update()
     {
       score.text = "Score: "+scoreDisplay.ToString();
